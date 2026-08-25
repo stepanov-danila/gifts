@@ -8,7 +8,7 @@ A small, single-purpose React SPA: an **advent-calendar-style gift app**. The
 screen is a grid of "gift days"; each tile unlocks on or after its date, and
 opening a tile shows a dialog with the gift reveal. It is a personal, gifted
 web page — the UI text is in **Russian**, and the content in `src/data.js` is
-hand-edited per occasion (the current data set is for New Year 2025).
+hand-edited per occasion (the current data set is for New Year 2027).
 
 It is a Create React App (react-scripts 5) project deployed to GitHub Pages at
 `https://stepanov-danila.github.io/gifts` (see `homepage` in `package.json`).
@@ -104,7 +104,7 @@ give it a unique `id`.
 - **The unlock date check compares day, month, and year independently**
   (`todayDay >= giftDay && todayMonth >= giftMonth && todayYear >= giftYear`)
   rather than comparing timestamps. This is wrong across month boundaries —
-  e.g. on 2025-01-01 a tile dated 2024-12-31 stays locked because `1 >= 31` and
+  e.g. on 2027-01-01 a tile dated 2026-12-31 stays locked because `1 >= 31` and
   `0 >= 11` are false. If you touch unlocking logic, prefer comparing `Date`
   values directly. Keep in mind that existing users' `localStorage` already
   holds whatever state the old logic produced.
